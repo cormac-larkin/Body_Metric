@@ -51,14 +51,12 @@ document.addEventListener("DOMContentLoaded", () => {
         // Different formulae are used depending on gender
         if (gender == "male") {
             var bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
-            resultsText.innerText = `Your BMR is ${Math.round(bmr)} kCal per day!`;
+            resultsText.innerText = `Your BMR is ${Math.round(bmr).toLocaleString("en")} kCal per day!`;
             resultsDiv.style.display = "block";
-            console.log(Math.round(bmr))
         } else {
             var bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
-            resultsText.innerText = `Your BMR is ${Math.round(bmr)} kCal per day!`;
+            resultsText.innerText = `Your BMR is ${Math.round(bmr).toLocaleString("en")} kCal per day!`;
             resultsDiv.style.display = "block";
-            console.log(Math.round(bmr))
         }        
     })
     // TDEE Calculator Logic
@@ -86,15 +84,13 @@ document.addEventListener("DOMContentLoaded", () => {
         if (gender == "male") {
             var bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
             var tdee = bmr * activityMultiplier;
-            resultsText.innerText = `Your tdee is ${Math.round(tdee)} kCal per day!`;
+            resultsText.innerText = `Your TDEE is ${Math.round(tdee).toLocaleString("en")} kCal per day!`;
             resultsDiv.style.display = "block";
-            console.log(Math.round(tdee));
         } else {
             var bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
             var tdee = bmr * activityMultiplier;
-            resultsText.innerText = `Your tdee is ${Math.round(tdee)} kCal per day!`;
+            resultsText.innerText = `Your tdee is ${Math.round(tdee).toLocaleString("en")} kCal per day!`;
             resultsDiv.style.display = "block";
-            console.log(Math.round(tdee));
         }
     })
     // FFMI Calculator Logic
@@ -105,6 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
         var fatFreeMass = weight * (1 - (bodyFatPercentage / 100));
         var ffmi = fatFreeMass / (height/100) **2;
 
+        // Display results at bottom of page
         resultsText.innerText = `Your FFMI is ${ffmi.toFixed(2)}!`
         resultsDiv.style.display = "block";
     })
