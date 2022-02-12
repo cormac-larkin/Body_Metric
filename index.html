@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>BodyCalc</title>
+</head>
+<body>
+
+    <ul id="nav-bar">
+        <li class="nav-item" id="bmr-button"><a href="#">BMR</a></li>
+        <li class="nav-item" id="tdee-button"><a href="#">TDEE</a></li>
+        <li class="nav-item" id="ffmi-button"><a href="#">FFMI</a></li>
+    </ul>
+
+    <main id="main">
+
+        <div id="bmr-div">
+            <h1 class="header">BMR Calculator</h1>
+
+            <div class="instruction-container">
+                <p class="description">
+                    'BMR' or Basal Metabolic Rate is the minimum amount of calories your body needs per day to function properly. 
+                    Knowing your BMR is a great first step in determining your caloric needs!
+                </p>
+                <p class="instruction"><u>Complete the fields below to determine your BMR</u></p>
+            </div>
+
+            <div class="input-container">
+                <label>Gender</label>
+                <select name="gender" class="gender-select" id="bmr-gender-select">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <br>
+                <label>Height (cm)</label>
+                <input type="number" class="height-input" id="bmr-height-input">
+                <br>
+                <label>Weight (kg)</label>
+                <input type="number" class="weight-input" id="bmr-weight-input">
+                <br>
+                <label>Age</label>
+                <input type="number" class="age-input" id="bmr-age-input">
+                <br>
+                <input type="submit" class="submit-btn" id="bmr-submit" value="Submit">
+            </div>
+        </div>
+
+        <div id="tdee-div">
+            <h1 class="header">TDEE Calculator</h1>
+
+            <div class="instruction-container">
+                <p class="description">
+                    'TDEE'or Total Daily Energy Expenditure is the total amount of calories you burn in a day.
+                    Your TDEE is determined by adding your BMR to the total amount of calories you burn through your daily activities!
+                </p>
+                <p class="instruction"><u>Complete the fields below to determine your TDEE</u></p>
+            </div>
+
+            <div class="input-container">
+                <label>Gender</label>
+                <select name="gender" class="gender-select" id="tdee-gender-select">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <br>
+                <label>Activity Level</label>
+                <select name="activity-level" class="activity-level-select" id="activity-level-select">
+                    <option value="sedentary">Sedentary</option>
+                    <option value="light">Lightly Active</option>
+                    <option value="moderate">Moderately Active</option>
+                    <option value="high">Highly Active</option>
+                    <option value="extreme">Extremely Active</option>
+                </select>
+                <br>
+                <label>Height (cm)</label>
+                <input type="number" class="height-input" id="tdee-height-input">
+                <br>
+                <label>Weight (kg)</label>
+                <input type="number" class="weight-input" id="tdee-weight-input">
+                <br>
+                <label>Age</label>
+                <input type="number" class="age-input" id="tdee-age-input">
+                <br>
+                <input type="submit" class="submit-btn" id="tdee-submit" value="Submit">
+            </div>
+        </div>
+
+        <div id="ffmi-div">
+            <h1 class="header">FFMI Calculator</h1>
+
+            <div class="instruction-container">
+                <p class="description">
+                    'FFMI'or Fat Free Mass Index is a measure of how much muscle you are carrying for your height and weight. A higher FFMI means you
+                    are carrying more muscle. The average male scores around 19 and the average female around 15. How do you stack up?
+                </p>
+                <p class="instruction"><u>Complete the fields below to determine your FFMI</u></p>
+            </div>
+
+            <div class="input-container">
+                <label>Height (cm)</label>
+                <input type="number" class="height-input" id="ffmi-height-input">
+                <br>
+                <label>Weight (kg)</label>
+                <input type="number" class="weight-input" id="ffmi-weight-input">
+                <br>
+                <label>Bodyfat %</label>
+                <input type="number" class="age-input" id="ffmi-bodyfat-input">
+                <br>
+                <input type="submit" class="submit-btn" id="ffmi-submit" value="Submit">
+            </div>
+    
+        </div>
+
+        <div id="results-div">
+            <p id="results-text"></p>
+        </div>
+
+    </main>
+
+    <footer>Cormac Larkin 2022</footer>
+    <script src="/index.js"></script>
+</body>
+</html>
