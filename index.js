@@ -1,10 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Assign Nav links to variables
+    const homeButton = document.getElementById("home-button");
     const bmrButton = document.getElementById("bmr-button");
     const tdeeButton = document.getElementById("tdee-button");
     const ffmiButton = document.getElementById("ffmi-button");
 
-    // Assign calculator divs to variables
+    // Assign Home/calculator divs to variables
+    const homeDiv = document.getElementById("home-div");
     const bmrDiv = document.getElementById("bmr-div");
     const tdeeDiv = document.getElementById("tdee-div");
     const ffmiDiv = document.getElementById("ffmi-div");
@@ -22,8 +24,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const inputs = Array.from(inputNodeList);
 
     // When the Nav link for any calculator is clicked, hide all other calculators and clear the input fields/results
+    homeButton.addEventListener("click", () => {
+        homeDiv.style.display = "block";
+        bmrDiv.style.display = "none";
+        tdeeDiv.style.display = "none";
+        ffmiDiv.style.display = "none";
+        resultsDiv.display = "none";
+        resultsDiv.innerHTML = "";
+        inputs.forEach(element => element.value = "");
+    })
     bmrButton.addEventListener("click", () => {
         bmrDiv.style.display = "block";
+        homeDiv.style.display = "none";
         tdeeDiv.style.display = "none";
         ffmiDiv.style.display = "none";
         resultsDiv.display = "none";
@@ -32,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     tdeeButton.addEventListener("click", () => {
         tdeeDiv.style.display = "block";
+        homeDiv.style.display = "none";
         bmrDiv.style.display = "none";
         ffmiDiv.style.display = "none";
         resultsDiv.display = "none";
@@ -40,6 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     ffmiButton.addEventListener("click", () => {
         ffmiDiv.style.display = "block";
+        homeDiv.style.display = "none";
         bmrDiv.style.display = "none";
         tdeeDiv.style.display = "none";
         resultsDiv.display = "none";
@@ -95,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             var bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
             var tdee = bmr * activityMultiplier;
-            resultsDiv.innerHTML = `<u>Result:</u> <br> <p>Your tdee is ${Math.round(tdee).toLocaleString("en")} kCal per day!</p>`;
+            resultsDiv.innerHTML = `<u>Result:</u> <br> <p>Your TDEE is ${Math.round(tdee).toLocaleString("en")} kCal per day!</p>`;
             resultsDiv.style.display = "block";
         }
     })
@@ -111,4 +125,5 @@ document.addEventListener("DOMContentLoaded", () => {
         resultsDiv.innerHTML = `<u>Result:</u> <br> <p>Your FFMI is ${ffmi.toFixed(2)}!<p>`
         resultsDiv.style.display = "block";
     })
+
 })

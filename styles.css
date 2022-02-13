@@ -44,6 +44,12 @@ body {
     transition: background-color 0.2s;
 }
 
+#nav-logo {
+    height: 30px;
+    width: 30px;
+    padding-right: 5px;
+}
+
 /* Make nav links cover their <li> containers, so we get cursor icon when hovering over them */
 .nav-item > a { 
     display: flex;
@@ -64,16 +70,28 @@ body {
     color: #091936;
 }
 
-/* Hide the TDEE and FFMI divs unless user clicks their nav-links*/
-#tdee-div {
-    display: none;
+#home-div {
+    width: 90%;
 }
 
-#ffmi-div {
-    display: none;
+#home-header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#results-div {
+#home-logo {
+    height: 50px;
+    width: 50px;
+}
+
+#home-header {
+    width: 50%;
+}
+
+/* Hide the calculator divs unless user clicks their nav-links*/
+#bmr-div, #tdee-div, #ffmi-div, #results-div {
+    width: 90%;
     display: none;
 }
 
