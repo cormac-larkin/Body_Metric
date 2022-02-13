@@ -89,6 +89,10 @@ body {
     width: 50%;
 }
 
+#features-list {
+    text-align: left;
+}
+
 /* Hide the calculator divs unless user clicks their nav-links*/
 #bmr-div, #tdee-div, #ffmi-div, #results-div {
     width: 90%;
@@ -147,6 +151,7 @@ input {
     border: 1px solid #091936;
     border-radius: 15px;
     background-color: #6899F3;
+    margin-bottom: 3px;
 }
 
 footer {

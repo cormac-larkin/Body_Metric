@@ -19,47 +19,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // Assign results div/text to variable
     const resultsDiv = document.getElementById("results-div");
 
-    // Assign all input fields to an array so we can clear them all
-    const inputNodeList = document.getElementsByClassName("input");
-    const inputs = Array.from(inputNodeList);
-
-    // When the Nav link for any calculator is clicked, hide all other calculators and clear the input fields/results
-    homeButton.addEventListener("click", () => {
-        homeDiv.style.display = "block";
-        bmrDiv.style.display = "none";
-        tdeeDiv.style.display = "none";
-        ffmiDiv.style.display = "none";
-        resultsDiv.display = "none";
-        resultsDiv.innerHTML = "";
-        inputs.forEach(element => element.value = "");
-    })
-    bmrButton.addEventListener("click", () => {
-        bmrDiv.style.display = "block";
-        homeDiv.style.display = "none";
-        tdeeDiv.style.display = "none";
-        ffmiDiv.style.display = "none";
-        resultsDiv.display = "none";
-        resultsDiv.innerHTML = "";
-        inputs.forEach(element => element.value = "");
-    })
-    tdeeButton.addEventListener("click", () => {
-        tdeeDiv.style.display = "block";
-        homeDiv.style.display = "none";
-        bmrDiv.style.display = "none";
-        ffmiDiv.style.display = "none";
-        resultsDiv.display = "none";
-        resultsDiv.innerHTML = "";
-        inputs.forEach(element => element.value = "");
-    })
-    ffmiButton.addEventListener("click", () => {
-        ffmiDiv.style.display = "block";
-        homeDiv.style.display = "none";
-        bmrDiv.style.display = "none";
-        tdeeDiv.style.display = "none";
-        resultsDiv.display = "none";
-        resultsDiv.innerHTML = "";
-        inputs.forEach(element => element.value = "");
-    })
+    // When the Nav link for the homepage or a calculator is clicked, show the corresponding section.
+    // Hide all other sections and clear the input fields and results section
+    homeButton.addEventListener("click", () => {showDiv(homeDiv)});
+    bmrButton.addEventListener("click", () => {showDiv(bmrDiv)});
+    tdeeButton.addEventListener("click", () => {showDiv(tdeeDiv)});
+    ffmiButton.addEventListener("click", () => {showDiv(ffmiDiv)});
 
     // When the submit button for any calculator is clicked, calculate the results and display them at the bottom of it's div
     // BMR Calculator Logic
@@ -79,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
             resultsDiv.style.display = "block";
         }        
     })
+
     // TDEE Calculator Logic
     tdeeSubmit.addEventListener("click", () => {
         var gender = document.getElementById("tdee-gender-select").value;
@@ -113,6 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
             resultsDiv.style.display = "block";
         }
     })
+
     // FFMI Calculator Logic
     ffmiSubmit.addEventListener("click", () => {
         var height = document.getElementById("ffmi-height-input").value;
@@ -126,4 +93,21 @@ document.addEventListener("DOMContentLoaded", () => {
         resultsDiv.style.display = "block";
     })
 
+    // This function shows one section and hides all others, also clears all input/result fields.
+    // Used for switching between Home/Calculator Sections.
+    function showDiv(visibleDiv) {
+
+        // Get all Sections and Input/result fields
+        let allSectionsNodeList = document.getElementsByClassName("section");
+        let allSections = Array.from(allSectionsNodeList);
+        let allInputsNodeList = document.getElementsByClassName("input");
+        let allInputs = Array.from(allInputsNodeList);
+        let results = document.getElementById("results-div");
+
+        // Clear all input/result fields and hide all sections except the one we want to display
+        allInputs.forEach(element => element.value = "");
+        results.innerHTML = "";
+        allSections.forEach(element => element.style.display = "none");
+        visibleDiv.style.display = "block";
+    }
 })

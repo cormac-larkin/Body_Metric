@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>BodyCalc</title>
+    <title>BodyMetric</title>
 </head>
 <body>
 
     <ul id="nav-bar">
-        <li class="nav-item" id="home-button"><img src="/images/home-icon.svg" alt="logo" id="nav-logo">Home</img></li>
+        <li class="nav-item" id="home-button"><img src="images/home-icon.svg" alt="logo" id="nav-logo">Home</img></li>
         <li class="nav-item" id="bmr-button"><a href="#">BMR</a></li>
         <li class="nav-item" id="tdee-button"><a href="#">TDEE</a></li>
         <li class="nav-item" id="ffmi-button"><a href="#">FFMI</a></li>
@@ -18,24 +18,34 @@
 
     <main id="main">
 
-        <div id="home-div">
+    <!-- Home Page Content -->
+        <div id="home-div" class="section">
             <div id="home-header-container">
-                <img src="/images/home-icon.svg" alt="logo" id="home-logo">
+                <img src="images/home-icon.svg" alt="logo" id="home-logo">
                 <h1 class="header" id="home-header">BodyMetric</h1>
             </div>
             <hr>
             
             <div class="instruction-container">
-                <h3>What is BodyMetric?</h3>
-                <p class="description">BodyMetric is a quick and easy health app, designed to run smoothly on your smartphone, tablet or Home PC!</p>
+                <h3><u>What is BodyMetric?</u></h3>
+                <p class="description">
+                    BodyMetric is a quick and easy to use health app, designed to run smoothly on your smartphone, tablet or Home PC!
+                    BodyMetric is ideal for anyone who wants to improve their health, fitness and overall wellbeing.
+                </p>
                 <hr>
-                <h3>Who is it for?</h3>
-                <p class="description">BodyMetric is for anyone who wants to improve their health, fitness and overall wellbeing!</p>
+                <h3><u>Features</u></h3>
+                <ul id="features-list">
+                    <li><a href="#">Basal Metabolic Rate Calculator (BMR)</a></li>
+                    <li><a href="#">Daily Energy Expenditure Calculator (TDEE)</a></li>
+                    <li><a href="#">Fat-Free Mass Index Calculator (FFMI)</a></li>
+                </ul>
+                <p class="description">New features being added frequently, check back soon for more!</p>
             </div>
             
         </div>
 
-        <div id="bmr-div">
+        <!--BMR Calculator Content -->
+        <div id="bmr-div" class="section">
             <h1 class="header">BMR Calculator</h1>
 
             <div class="instruction-container">
@@ -66,7 +76,8 @@
             </div>
         </div>
 
-        <div id="tdee-div">
+        <!-- TDEE Calculator Content -->
+        <div id="tdee-div" class="section">
             <h1 class="header">TDEE Calculator</h1>
 
             <div class="instruction-container">
@@ -106,7 +117,8 @@
             </div>
         </div>
 
-        <div id="ffmi-div">
+        <!-- FFMI Calculator Content -->
+        <div id="ffmi-div" class="section">
             <h1 class="header">FFMI Calculator</h1>
 
             <div class="instruction-container">
@@ -131,13 +143,14 @@
             </div>
     
         </div>
-
-        <div id="results-div">
+        <!--Calculator Results Content-->
+        <div id="results-div" class="section">
             
         </div>
 
     </main>
 
+    <!-- Footer -->
     <footer>Cormac Larkin 2022</footer>
     <script src="index.js" type="text/javascript"></script>
 </body>
